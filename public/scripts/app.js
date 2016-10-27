@@ -57,12 +57,12 @@
         .config(configApp);
 
     function configApp($routeProvider) {
-        // $routeProvider
-        //     .when('/', {
-        //         templateUrl: 'views/map.html',
-        //         controller: 'MapCtrl',
-        //         controllerAs: 'mapCtrl'
-        //     });
+        $routeProvider
+            .when('/', {
+                templateUrl: './scripts/views/mapTmpl.html',
+                controller: 'MapCtrl',
+                controllerAs: 'mapCtrl'
+            });
     }
 
 })();
