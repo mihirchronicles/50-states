@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org" lang="en" id="ng-app" ng-app="50-state">
+<html xmlns:ng="http://angularjs.org" lang="en" id="ng-app" ng-app="fifty-states">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href=""/>
-    <title>50-State</title>
+    <title>fifty-states</title>
     <link rel="shortcut icon" href="" />
     <!-- CSS -->
 
@@ -19,10 +19,21 @@
 </head>
 
 <body ng-controller="MainCtrl as mainCtrl">
+    <header>
+        <a href="#" class="fifty-states-head">
+            <img class="fifty-states-logo" src="">
+            <p class="main-title">50 States</p>
+        </a>
+
+        <div class="header-righto">
+        </div>
+    </header>
+
+    <div ng-view></div>
  
 
     <footer>
-        <p>50-state - Find Data.</p>
+        <p>Fifty States</p>
     </footer>
 
     <!-- SCRIPTS -->
