@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('fifty-states', ['ngRoute'])
+        .module('fifty-states', ['ngRoute', 'mapDirective', 'nzSweetAlert'])
         .constant('stateNames', {
             al: "Alabama",
             ak: "Alaska",

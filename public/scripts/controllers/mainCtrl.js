@@ -9,6 +9,8 @@
 
 	function MainCtrl($location, $scope) {
 		var vm = this;
+		vm.submitAddress = submitAddress; // function to change location path based on address
+		vm.address = {};
 
 		//array for state selector
 		vm.stateList = [ 				  
@@ -71,6 +73,15 @@
 				return -1;
 			return 0;
 		});
+		function submitAddress(){
+			$scope.$broadcast('show-errors-check-validity');
+			if (!$scope.searchReps.$valid) {
+				return; 
+			}
+			else if ($scope.searchReps.$valid) {
+				$location.path("/state/"+vm.address.state.abbreviation.toLowerCase()+"/"+vm.address.street+','+vm.address.city);
+			}
+		}
 	}
 	
 })();

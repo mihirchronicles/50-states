@@ -1,3 +1,14 @@
-<div class="map-container">
+<!-- <div class="map-container">
 
+</div>
+ -->
+<div class="map-container">
+	<div map-area id="container" request="mapCtrl.setCurrentState" change-state-name="mapCtrl.changeStateName"></div>
+	<p class="show-state" ng-hide="mapCtrl.hideState">{{mapCtrl.stateName}}</p>
+	<p class="show-state" ng-show="mapCtrl.showSpinner"><i class='ion-loading-c'></i></p>
+</div>
+
+<div class="map-gone">
+	<div><i class="ion-chevron-up bounce"></i></div>
+	<p>Plug in your address to see your local representatives!</p>
 </div>

@@ -19,19 +19,33 @@
 </head>
 
 <body ng-controller="MainCtrl as mainCtrl">
-    <header>
+     <header>
         <a href="#" class="fifty-states-head">
             <img class="fifty-states-logo" src="">
             <p class="main-title">50 States</p>
         </a>
 
         <div class="header-righto">
+            <form name="searchReps" novalidate>
+                <div class="form-group search-part" show-errors>
+                    <input type="text" ng-model="mainCtrl.address.street" name="address" class="form-control header-input address-input" placeholder="Street Address" required>
+                    <span class="help-block help-position" ng-if="searchReps.address.$error.required">Enter an Address</span>
+                </div>
+                <div class="form-group search-part" show-errors>
+                    <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control header-input city-input" placeholder="City" required>
+                    <span class="help-block help-position" ng-if="searchReps.city.$error.required">Enter a City</span>
+                </div>
+                <div class="form-group search-part" show-errors>
+                    <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" name="state" placeholder="State" required></select>
+                    <span class="help-block help-position" ng-if="searchReps.state.$error.required">Select State</span>
+                </div>
+                <div class="our-btn btn-blue" type="submit" ng-click="mainCtrl.submitAddress()" pending>Find Reps</div>
+            </form>
         </div>
     </header>
 
     <div ng-view></div>
  
-
     <footer>
         <p>Fifty States</p>
     </footer>
@@ -48,6 +62,10 @@
     
    <!--  App.js -->
    <script src="./scripts/app.js"></script>
+    
+    <!-- Sweet alert -->
+    <script src="./scripts/lib/sweet-alert.min.js"></script>
+    <script src="./scripts/lib/nzSweetAlert.js"></script>
 
     <!-- Controller -->
     <script src="./scripts/controllers/mainCtrl.js"></script>
@@ -56,6 +74,8 @@
     <!-- Services -->
 
     <!-- Directives -->
+    <script src="./scripts/directives/map-directive/raphael-min.js"></script>
+    <script src="./scripts/directives/map-directive/mapDirective.js"></script>
 
 </body>
 
