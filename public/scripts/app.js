@@ -62,6 +62,19 @@
                 templateUrl: './scripts/views/mapTmpl.html',
                 controller: 'MapCtrl',
                 controllerAs: 'mapCtrl'
+            })
+            .when('/state/:state', {  //route for when user clicks a state
+                templateUrl: 'views/stateInfo.html',
+                controller: 'StateCtrl',
+                controllerAs: 'stateCtrl',
+                resolve: {
+                    currentState: function($route) {
+                        return $route.current.params.state;
+                    },
+                    repArrays: function($route, StateService) {
+                        return StateService.getRepsByState($route.current.params.state);
+                    }
+                }
             });
     }
 
