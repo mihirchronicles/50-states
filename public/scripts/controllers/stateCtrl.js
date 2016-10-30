@@ -4,7 +4,7 @@
         .module('fifty-states')
         .controller('StateCtrl', StateCtrl);
 
-    function StateCtrl(currentState, repArrays, stateNames, EmailService, $location, $scope, $route) {
+    function StateCtrl(currentState, repArrays, stateNames, $location, $scope, $route) {
 
         var vm = this;
         vm.nationalReps = repArrays[0];
@@ -12,13 +12,7 @@
         vm.localReps = repArrays[2];
         vm.state = currentState;
         vm.stateName = stateNames[vm.state];
-        vm.setCurrentRep = setCurrentRep;
 
-        function setCurrentRep(rep) {
-            EmailService.setCurrentRep(rep);
-            EmailService.setLastPath($route.current.params.state, $route.current.params.address);
-            $location.path("/emailRep");
-        }
 
         //clear out input boxes
         if($scope.mainCtrl.address.city){

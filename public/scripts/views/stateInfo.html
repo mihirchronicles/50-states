@@ -1,0 +1,134 @@
+<div class="state-container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="state-pic-wrapper">
+                <p class="state-name">{{stateCtrl.stateName}}</p>
+                <img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
+            </div>
+            <div class="state-wall-wrapper">
+                <a href="#/state/{{stateCtrl.state}}/wall" class="our-btn btn-blue local-submit-btn" pending>Open State Wall</a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <h3 class="tier">National</h3>
+                <hr class="tier-hr">
+                <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
+                    <div class="col-sm-2">
+                        <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div class="rep-initials">{{rep.initials}}</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="rep-name">
+                            <ng href="#">{{rep.name}}</a>
+                        </p>
+                        <p class="rep-data">{{rep.office.name}}</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="social-list">
+                            <li ng-if="rep.emails.length > 0" class="rep-data pointer"><a ng-click="stateCtrl.setCurrentRep(rep)"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            <li ng-if="!rep.emails" class="rep-data"><i class="ion-ios7-email-outline email-icon disabled"></i>
+                            <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
+                            </li>
+                            <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.facebook" class="rep-data"><i class="ion-social-facebook-outline facebook-icon disabled"></i>
+                            </li>
+                            <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length === 0" class="rep-data"><i class="ion-ios7-world-outline website-icon disabled"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="tier">State</h3>
+                <hr class="tier-hr">
+                <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.stateReps">
+                    <div class="col-md-2">
+                        <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div class="rep-initials">{{rep.initials}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="rep-name">
+                            <ng href="#">{{rep.name}}</a>
+                        </p>
+                        <p class="rep-data">{{rep.office.name}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="social-list">
+                            <li ng-if="rep.emails.length > 0" class="rep-data"><a ng-click="stateCtrl.setCurrentRep(rep)"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            <li ng-if="!rep.emails" class="rep-data"><i class="ion-ios7-email-outline email-icon disabled"></i>
+                            <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
+                            </li>
+                            <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.facebook" class="rep-data"><i class="ion-social-facebook-outline facebook-icon disabled"></i>
+                            </li>
+                            <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length === 0" class="rep-data"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row space-bottom">
+                <h3 class="tier">Local</h3>
+                <hr class="tier-hr">
+                <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.localReps">
+                    <div class="col-md-2">
+                        <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div class="rep-initials">{{rep.initials}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="rep-name">
+                            <ng href="#">{{rep.name}}</a>
+                        </p>
+                        <p class="rep-data">{{rep.office.name}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="social-list">
+                            <li ng-if="rep.emails.length > 0" class="rep-data"><a ng-click="stateCtrl.setCurrentRep(rep)"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            <li ng-if="!rep.emails" class="rep-data"><i class="ion-ios7-email-outline email-icon disabled"></i>
+                            <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
+                            </li>
+                            <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.facebook" class="rep-data"><i class="ion-social-facebook-outline facebook-icon disabled"></i>
+                            </li>
+                            <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            </li>
+                            <li ng-if="rep.urls.length === 0 || !rep.urls" class="rep-data"><i class="ion-ios7-world-outline website-icon disabled"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="local-lookup" ng-show="stateCtrl.localReps.length===0">
+
+                    <form name="searchReps" novalidate>
+                        <div class="form-group search-part" show-errors>
+                            <input type="text" ng-model="mainCtrl.address.street" name="address" class="form-control local-input" placeholder="Address" required>
+                            <span class="help-block help-position" ng-if="searchReps.address.$error.required">Enter an Address</span>
+                        </div>
+                        <div class="form-group search-part" show-errors>
+                            <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control local-input city-input" placeholder="City" required>
+                            <span class="help-block help-position" ng-if="searchReps.city.$error.required">Enter a City</span>
+                        </div>
+                        <div class="form-group search-part" show-errors>
+                            <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State" name="state" required></select>
+                            <span class="help-block help-position" ng-if="searchReps.state.$error.required">Select State</span>
+                            <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()" pending>Find Local Reps</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

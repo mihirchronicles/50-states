@@ -64,7 +64,7 @@
                 controllerAs: 'mapCtrl'
             })
             .when('/state/:state', {  //route for when user clicks a state
-                templateUrl: 'views/stateInfo.html',
+                templateUrl: './scripts/views/stateInfo.html',
                 controller: 'StateCtrl',
                 controllerAs: 'stateCtrl',
                 resolve: {
